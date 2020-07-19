@@ -1,0 +1,11 @@
+version: '2.3' 
+services: 
+    react: 
+        build: ./ 
+        volumes: 
+            - ./:/nodeapp 
+            - /nodeapp/node_modules 
+        ports: 
+            - "3000:8080" 
+
+
