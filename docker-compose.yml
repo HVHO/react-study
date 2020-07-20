@@ -1,4 +1,4 @@
-version: '2.3' 
+version: '3' 
 services: 
     react: 
         build: ./ 
@@ -6,6 +6,8 @@ services:
             - ./:/nodeapp 
             - /nodeapp/node_modules 
         ports: 
-            - "3000:8080" 
+            - "3000:8080"
+        stdin_open: true
+        tty: true 
 
 
