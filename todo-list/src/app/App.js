@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+import './Tile'
 import './App.css';
+import Tile from './Tile';
+
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +11,6 @@ class App extends Component {
     this.state = {
       newItem: "",
       list: [
-
       ],
     }
   }
@@ -45,7 +47,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1 className='title'>Todo App</h1>
-          Add a task!
+          Add a task!!!!
         <br />
         <input
           type = 'text'
@@ -61,11 +63,12 @@ class App extends Component {
             this.state.list.map(item => {
               return(
                 <li key={item.id}>
-                  {item.value}
-                  <button onClick={() => this.deleteItem(item.id)}>
-                    <i>X</i>
-                  </button>
+                  <Tile
+                    value={item.value}
+                    onClick={() => this.addItem}
+                  />
                 </li>
+
               );
             })
           }
